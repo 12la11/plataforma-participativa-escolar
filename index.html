@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Estudiantil</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container">
+        <div class="brand">
+          <span class="brand-mark">FJ</span>
+          <div>
+            <p class="brand-name">Francisco José de Caldas</p>
+            <small>Plataforma escolar</small>
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <a href="#inicio"><span aria-hidden="true">⌂</span> Inicio</a>
+          <a href="#datos-basicos"><span aria-hidden="true">◉</span> Mi perfil</a>
+          <a href="#materias"><span aria-hidden="true">▦</span> Materias</a>
+          <a href="#eventos"><span aria-hidden="true">▣</span> Eventos</a>
+          <a href="#reconocimiento"><span aria-hidden="true">✦</span> Reconocimientos</a>
+          <a href="#ranking"><span aria-hidden="true">↗</span> Rendimiento</a>
+          <a href="#encuestas"><span aria-hidden="true">☷</span> Encuestas</a>
+        </div>
+
+        <button class="btn-nav" type="button">Ingresar</button>
+      </nav>
+    </header>
+
+    <main>
+      <div class="dashboard-topbar">
+        <div>
+          <span class="mini-tag">PLATAFORMA ESCOLAR</span>
+          <h1>Hola, <span id="welcome-name">estudiante</span> 👋</h1>
+          <p>Todo lo que necesitas para acompañar tu aprendizaje, en un solo lugar.</p>
+        </div>
+        <a class="topbar-profile" href="#datos-basicos" aria-label="Ir a mi perfil">
+          <span class="profile-avatar-small" id="topbar-avatar">US</span>
+          <span>Mi perfil</span>
+        </a>
+      </div>
+
+      <section id="inicio" class="hero page-section is-visible">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <img
+              class="school-emblem"
+              src="Captura de pantalla 2026-10-09 131809.png"
+              alt="Escudo del colegio"
+            />
+            <span class="tag">Portal Estudiantil</span>
+            <h2>Tu espacio para aprender y avanzar.</h2>
+            <p>Completa el formulario para crear tu cuenta y entrar a la comunidad escolar.</p>
+          </div>
+
+          <div id="registro" class="auth-panel">
+            <form id="login-form" class="auth-form" autocomplete="on" hidden>
+              <div class="form-intro">
+                <span class="mini-tag">BIENVENIDO DE NUEVO</span>
+                <h2>Inicia sesión</h2>
+              </div>
+              <div class="input-group">
+                <label for="login-email">Correo</label>
+                <input id="login-email" type="email" autocomplete="username" placeholder="correo@ejemplo.com" />
+              </div>
+              <div class="input-group">
+                <label for="login-password">Contraseña</label>
+                <input id="login-password" type="password" autocomplete="current-password" placeholder="••••••••" />
+              </div>
+              <button type="submit" class="btn-primary full">Entrar</button>
+              <div class="confirmation-message" aria-live="polite"></div>
+              <button id="show-registration" type="button" class="btn-secondary full">Crear una cuenta nueva</button>
+            </form>
+
+            <form id="registro-form" class="auth-form active" autocomplete="on">
+              <div class="form-intro">
+                <span class="mini-tag">CREA TU CUENTA</span>
+                <h2>Formulario de registro</h2>
+                <p>Ingresa tus datos para comenzar.</p>
+              </div>
+              <div class="input-group registration-name">
+                <label for="nombre">Nombre completo</label>
+                <input id="nombre" type="text" autocomplete="name" maxlength="100" required placeholder="Escribe tu nombre completo" />
+              </div>
+              <div class="registration-row">
+                <div class="input-group">
+                  <label for="documento">Documento</label>
+                  <input id="documento" type="text" autocomplete="off" maxlength="40" required placeholder="Número de documento" />
+                </div>
+                <div class="input-group">
+                  <label for="grado">Grado</label>
+                  <select id="grado" autocomplete="off" required>
+                    <option value="" disabled selected>Selecciona tu grado</option>
+                    <option value="6°">6°</option>
+                    <option value="7°">7°</option>
+                    <option value="8°">8°</option>
+                    <option value="9°">9°</option>
+                    <option value="10°">10°</option>
+                    <option value="11°">11°</option>
+                  </select>
+                </div>
+              </div>
+              <div class="registration-row">
+                <div class="input-group">
+                  <label for="salon">Salón (7 por grado)</label>
+                  <select id="salon" autocomplete="off" required>
+                    <option value="" disabled selected>Selecciona tu salón</option>
+                    <option value="1">Salón 1</option>
+                    <option value="2">Salón 2</option>
+                    <option value="3">Salón 3</option>
+                    <option value="4">Salón 4</option>
+                    <option value="5">Salón 5</option>
+                    <option value="6">Salón 6</option>
+                    <option value="7">Salón 7</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label for="correo">Correo</label>
+                  <input id="correo" type="email" autocomplete="username" maxlength="254" required placeholder="correo@ejemplo.com" />
+                </div>
+              </div>
+              <div class="input-group registration-password">
+                <label for="password">Contraseña</label>
+                <input id="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" required placeholder="Mínimo 8 caracteres" />
+              </div>
+              <button type="submit" class="btn-primary full">Crear cuenta</button>
+              <div class="confirmation-message" aria-live="polite"></div>
+            </form>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="datos-basicos" class="student-data container page-section">
+        <div class="section-heading">
+          <span class="mini-tag">Perfil del estudiante</span>
+          <h2>Datos básicos</h2>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-avatar" id="profile-avatar">US</div>
+          <div class="profile-details">
+            <h3 id="profile-name">Completa tu registro</h3>
+            <p>Grado: <span id="profile-grade">—</span></p>
+            <ul>
+              <li><strong>Documento:</strong> <span id="profile-document">—</span></li>
+              <li><strong>Salón:</strong> <span id="profile-salon">—</span></li>
+              <li><strong>Correo:</strong> <span id="profile-email">—</span></li>
+            </ul>
+            <p id="account-status" class="confirmation-message" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="materias" class="container section-space page-section">
+        <div class="section-heading">
+          <span class="mini-tag">Plan de estudios</span>
+          <h2>Materias del colegio</h2>
+        </div>
+
+        <div class="materials-role-switch" aria-label="Seleccionar vista por rol">
+          <button type="button" class="role-tab active" data-role="student">Estudiantes</button>
+          <button type="button" class="role-tab" data-role="teacher">Vista docente</button>
+        </div>
+
+        <div class="role-view student-view active">
+          <div class="cards-grid">
+          <article class="info-card">
+            <div class="icon circle green">➗</div><h3>Matemáticas</h3><p>Resuelve problemas y desarrolla el pensamiento lógico.</p>
+            <div class="subject-board" data-subject="matematicas">
+              <label for="course-matematicas">Curso</label>
+              <select id="course-matematicas" class="subject-course" required><option value="">Selecciona el curso</option></select>
+              <label for="question-matematicas">Pregunta o tema para el curso</label>
+              <textarea id="question-matematicas" class="subject-question-input" rows="3" placeholder="Escribe una pregunta o tema para conversar"></textarea>
+              <button type="button" class="btn-primary full save-subject-question">Publicar pregunta</button>
+              <button type="button" class="btn-delete-question" hidden>Borrar pregunta y respuestas</button>
+              <p class="subject-status" aria-live="polite"></p>
+              <div class="subject-discussion">
+                <p class="subject-question-display">Aún no hay una pregunta para este curso.</p>
+                <form class="subject-response-form">
+                  <label for="response-matematicas">Tu respuesta u opinión</label>
+                  <textarea id="response-matematicas" class="subject-response-input" rows="3" placeholder="Escribe tu respuesta"></textarea>
+                  <button type="submit" class="btn-primary full">Enviar respuesta</button>
+                </form>
+                <div class="subject-responses" aria-live="polite"></div>
+              </div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="icon circle orange">🌎</div><h3>Sociales</h3><p>Aprende sobre historia, geografía y sociedad.</p>
+            <div class="subject-board" data-subject="sociales">
+              <label for="course-sociales">Curso</label>
+              <select id="course-sociales" class="subject-course" required><option value="">Selecciona el curso</option></select>
+              <label for="question-sociales">Pregunta o tema para el curso</label>
+              <textarea id="question-sociales" class="subject-question-input" rows="3" placeholder="Escribe una pregunta o tema para conversar"></textarea>
+              <button type="button" class="btn-primary full save-subject-question">Publicar pregunta</button>
+              <button type="button" class="btn-delete-question" hidden>Borrar pregunta y respuestas</button>
+              <p class="subject-status" aria-live="polite"></p>
+              <div class="subject-discussion">
+                <p class="subject-question-display">Aún no hay una pregunta para este curso.</p>
+                <form class="subject-response-form">
+                  <label for="response-sociales">Tu respuesta u opinión</label>
+                  <textarea id="response-sociales" class="subject-response-input" rows="3" placeholder="Escribe tu respuesta"></textarea>
+                  <button type="submit" class="btn-primary full">Enviar respuesta</button>
+                </form>
+                <div class="subject-responses" aria-live="polite"></div>
+              </div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="icon circle blue">🌐</div><h3>Inglés</h3><p>Practica comunicación y comprensión en inglés.</p>
+            <div class="subject-board" data-subject="ingles">
+              <label for="course-ingles">Curso</label>
+              <select id="course-ingles" class="subject-course" required><option value="">Selecciona el curso</option></select>
+              <label for="question-ingles">Pregunta o tema para el curso</label>
+              <textarea id="question-ingles" class="subject-question-input" rows="3" placeholder="Escribe una pregunta o tema para conversar"></textarea>
+              <button type="button" class="btn-primary full save-subject-question">Publicar pregunta</button>
+              <button type="button" class="btn-delete-question" hidden>Borrar pregunta y respuestas</button>
+              <p class="subject-status" aria-live="polite"></p>
+              <div class="subject-discussion">
+                <p class="subject-question-display">Aún no hay una pregunta para este curso.</p>
+                <form class="subject-response-form">
+                  <label for="response-ingles">Tu respuesta u opinión</label>
+                  <textarea id="response-ingles" class="subject-response-input" rows="3" placeholder="Escribe tu respuesta"></textarea>
+                  <button type="submit" class="btn-primary full">Enviar respuesta</button>
+                </form>
+                <div class="subject-responses" aria-live="polite"></div>
+              </div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="icon circle green">🧬</div><h3>Biología</h3><p>Explora los seres vivos y los ecosistemas.</p>
+            <div class="subject-board" data-subject="biologia">
+              <label for="course-biologia">Curso</label>
+              <select id="course-biologia" class="subject-course" required><option value="">Selecciona el curso</option></select>
+              <label for="question-biologia">Pregunta o tema para el curso</label>
+              <textarea id="question-biologia" class="subject-question-input" rows="3" placeholder="Escribe una pregunta o tema para conversar"></textarea>
+              <button type="button" class="btn-primary full save-subject-question">Publicar pregunta</button>
+              <button type="button" class="btn-delete-question" hidden>Borrar pregunta y respuestas</button>
+              <p class="subject-status" aria-live="polite"></p>
+              <div class="subject-discussion">
+                <p class="subject-question-display">Aún no hay una pregunta para este curso.</p>
+                <form class="subject-response-form">
+                  <label for="response-biologia">Tu respuesta u opinión</label>
+                  <textarea id="response-biologia" class="subject-response-input" rows="3" placeholder="Escribe tu respuesta"></textarea>
+                  <button type="submit" class="btn-primary full">Enviar respuesta</button>
+                </form>
+                <div class="subject-responses" aria-live="polite"></div>
+              </div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="icon circle orange">📊</div><h3>Estadística</h3><p>Interpreta datos y comprende la probabilidad.</p>
+            <div class="subject-board" data-subject="estadistica">
+              <label for="course-estadistica">Curso</label>
+              <select id="course-estadistica" class="subject-course" required><option value="">Selecciona el curso</option></select>
+              <label for="question-estadistica">Pregunta o tema para el curso</label>
+              <textarea id="question-estadistica" class="subject-question-input" rows="3" placeholder="Escribe una pregunta o tema para conversar"></textarea>
+              <button type="button" class="btn-primary full save-subject-question">Publicar pregunta</button>
+              <button type="button" class="btn-delete-question" hidden>Borrar pregunta y respuestas</button>
+              <p class="subject-status" aria-live="polite"></p>
+              <div class="subject-discussion">
+                <p class="subject-question-display">Aún no hay una pregunta para este curso.</p>
+                <form class="subject-response-form">
+                  <label for="response-estadistica">Tu respuesta u opinión</label>
+                  <textarea id="response-estadistica" class="subject-response-input" rows="3" placeholder="Escribe tu respuesta"></textarea>
+                  <button type="submit" class="btn-primary full">Enviar respuesta</button>
+                </form>
+                <div class="subject-responses" aria-live="polite"></div>
+              </div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="icon circle blue">⚛️</div><h3>Física</h3><p>Descubre cómo funcionan la energía y el movimiento.</p>
+            <div class="subject-board" data-subject="fisica">
+              <label for="course-fisica">Curso</label>
+              <select id="course-fisica" class="subject-course" required><option value="">Selecciona el curso</option></select>
+              <label for="question-fisica">Pregunta o tema para el curso</label>
+              <textarea id="question-fisica" class="subject-question-input" rows="3" placeholder="Escribe una pregunta o tema para conversar"></textarea>
+              <button type="button" class="btn-primary full save-subject-question">Publicar pregunta</button>
+              <button type="button" class="btn-delete-question" hidden>Borrar pregunta y respuestas</button>
+              <p class="subject-status" aria-live="polite"></p>
+              <div class="subject-discussion">
+                <p class="subject-question-display">Aún no hay una pregunta para este curso.</p>
+                <form class="subject-response-form">
+                  <label for="response-fisica">Tu respuesta u opinión</label>
+                  <textarea id="response-fisica" class="subject-response-input" rows="3" placeholder="Escribe tu respuesta"></textarea>
+                  <button type="submit" class="btn-primary full">Enviar respuesta</button>
+                </form>
+                <div class="subject-responses" aria-live="polite"></div>
+              </div>
+            </div>
+          </article>
+          <article class="info-card">
+            <div class="icon circle green">💻</div><h3>Informática</h3><p>Desarrolla habilidades digitales y tecnológicas.</p>
+            <div class="subject-board" data-subject="informatica">
+              <label for="course-informatica">Curso</label>
+              <select id="course-informatica" class="subject-course" required><option value="">Selecciona el curso</option></select>
+              <label for="question-informatica">Pregunta o tema para el curso</label>
+              <textarea id="question-informatica" class="subject-question-input" rows="3" placeholder="Escribe una pregunta o tema para conversar"></textarea>
+              <button type="button" class="btn-primary full save-subject-question">Publicar pregunta</button>
+              <button type="button" class="btn-delete-question" hidden>Borrar pregunta y respuestas</button>
+              <p class="subject-status" aria-live="polite"></p>
+              <div class="subject-discussion">
+                <p class="subject-question-display">Aún no hay una pregunta para este curso.</p>
+                <form class="subject-response-form">
+                  <label for="response-informatica">Tu respuesta u opinión</label>
+                  <textarea id="response-informatica" class="subject-response-input" rows="3" placeholder="Escribe tu respuesta"></textarea>
+                  <button type="submit" class="btn-primary full">Enviar respuesta</button>
+                </form>
+                <div class="subject-responses" aria-live="polite"></div>
+              </div>
+            </div>
+          </article>
+          </div>
+        </div>
+
+        <div class="role-view teacher-view">
+          <div class="teacher-grid">
+            <article class="teacher-card">
+              <span class="teacher-tag">Herramientas docentes</span>
+              <h3>Gestiona tu materia</h3>
+              <p>Publica preguntas desde la vista de estudiantes. Los puntajes se asignan en Reconocimientos.</p>
+              <button type="button" class="btn-primary" data-open-student-tools>Administrar preguntas</button>
+              <a class="btn-secondary" href="#reconocimiento">Administrar puntajes</a>
+            </article>
+            <article class="teacher-card">
+              <span class="teacher-tag">Matemáticas</span>
+              <h3>Prof. Carlos Torres</h3>
+              <p>Curso: 6° - 11°</p>
+              <p>Horario: Lunes a viernes · 7:30 a.m.</p>
+            </article>
+            <article class="teacher-card">
+              <span class="teacher-tag">Sociales</span>
+              <h3>Prof. Daniela García</h3>
+              <p>Curso: 6° - 11°</p>
+              <p>Horario: Martes y jueves · 9:00 a.m.</p>
+            </article>
+            <article class="teacher-card">
+              <span class="teacher-tag">Inglés</span>
+              <h3>Prof. Ana López</h3>
+              <p>Curso: 6° - 11°</p>
+              <p>Horario: Lunes a viernes · 8:00 a.m.</p>
+            </article>
+            <article class="teacher-card">
+              <span class="teacher-tag">Biología</span>
+              <h3>Prof. Samuel Ramírez</h3>
+              <p>Curso: 6° - 11°</p>
+              <p>Horario: Miércoles y viernes · 10:00 a.m.</p>
+            </article>
+            <article class="teacher-card">
+              <span class="teacher-tag">Estadística</span>
+              <h3>Prof. María Esteban</h3>
+              <p>Curso: 6° - 11°</p>
+              <p>Horario: Martes y jueves · 11:00 a.m.</p>
+            </article>
+            <article class="teacher-card">
+              <span class="teacher-tag">Física</span>
+              <h3>Prof. Javier Cruz</h3>
+              <p>Curso: 6° - 11°</p>
+              <p>Horario: Lunes a viernes · 12:00 p.m.</p>
+            </article>
+            <article class="teacher-card">
+              <span class="teacher-tag">Informática</span>
+              <h3>Prof. Laura Moreno</h3>
+              <p>Curso: 6° - 11°</p>
+              <p>Horario: Miércoles · 1:00 p.m.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="eventos" class="container section-space page-section">
+        <div class="section-heading">
+          <span class="mini-tag">Eventos</span>
+          <h2>Eventos y actividades</h2>
+        </div>
+
+        <div class="cards-grid event-cards-grid">
+          <article class="info-card weekly-program-card">
+            <div class="icon circle orange">🗓️</div>
+            <h3>Programación de la semana</h3>
+            <p>Escribe aquí recordatorios, tareas o actividades importantes.</p>
+            <form id="weekly-note-form" class="weekly-note-form">
+              <label for="weekly-note">Mi nota</label>
+              <textarea id="weekly-note" rows="5" maxlength="2000" placeholder="Anota algo para esta semana..."></textarea>
+              <button type="submit" class="btn-primary full">Guardar nota</button>
+              <p id="weekly-note-status" class="weekly-note-status" aria-live="polite"></p>
+            </form>
+          </article>
+
+          <article class="info-card featured-subject-card">
+            <div class="icon circle blue">📚</div>
+            <h3>Materias destacadas del día</h3>
+            <p>Marca las materias que más sobresalen hoy.</p>
+            <form id="featured-subjects-form" class="featured-subjects-form">
+              <fieldset class="featured-subject-options">
+                <legend>Materias</legend>
+                <label><input type="checkbox" name="featured-subject" value="Matemáticas" /> Matemáticas</label>
+                <label><input type="checkbox" name="featured-subject" value="Sociales" /> Sociales</label>
+                <label><input type="checkbox" name="featured-subject" value="Inglés" /> Inglés</label>
+                <label><input type="checkbox" name="featured-subject" value="Biología" /> Biología</label>
+                <label><input type="checkbox" name="featured-subject" value="Estadística" /> Estadística</label>
+                <label><input type="checkbox" name="featured-subject" value="Física" /> Física</label>
+                <label><input type="checkbox" name="featured-subject" value="Informática" /> Informática</label>
+              </fieldset>
+              <button type="submit" class="btn-primary full">Guardar materias del día</button>
+            </form>
+            <div id="featured-subjects-display" class="featured-subjects-display" aria-live="polite"></div>
+            <p id="featured-subjects-status" class="featured-subjects-status" aria-live="polite"></p>
+          </article>
+        </div>
+
+        <div class="subject-activity-grid">
+          <article class="info-card subject-activity-card">
+            <div class="icon circle green">➗</div>
+            <span class="teacher-tag">Matemáticas</span>
+            <h3>Prof. Carlos Torres</h3>
+            <ul class="subject-activity-list">
+              <li><strong>Evento:</strong> Taller de ecuaciones y problemas.</li>
+              <li><strong>Actividad:</strong> Resolver 8 ejercicios en clase.</li>
+              <li><strong>Horario:</strong> Lunes · 7:30 a.m.</li>
+            </ul>
+            <button type="button" class="btn-primary full save-activity" data-event-id="matematicas-taller">Guardar actividad</button>
+          </article>
+
+          <article class="info-card subject-activity-card">
+            <div class="icon circle orange">🌎</div>
+            <span class="teacher-tag">Sociales</span>
+            <h3>Prof. Daniela García</h3>
+            <ul class="subject-activity-list">
+              <li><strong>Evento:</strong> Debate sobre historia local.</li>
+              <li><strong>Actividad:</strong> Entrega de mapa conceptual.</li>
+              <li><strong>Horario:</strong> Martes · 9:00 a.m.</li>
+            </ul>
+            <button type="button" class="btn-primary full save-activity" data-event-id="sociales-debate">Guardar actividad</button>
+          </article>
+
+          <article class="info-card subject-activity-card">
+            <div class="icon circle blue">🌐</div>
+            <span class="teacher-tag">Inglés</span>
+            <h3>Prof. Ana López</h3>
+            <ul class="subject-activity-list">
+              <li><strong>Evento:</strong> Conversación guiada en inglés.</li>
+              <li><strong>Actividad:</strong> Presentación oral de 2 minutos.</li>
+              <li><strong>Horario:</strong> Miércoles · 8:00 a.m.</li>
+            </ul>
+            <button type="button" class="btn-primary full save-activity" data-event-id="ingles-conversacion">Guardar actividad</button>
+          </article>
+
+          <article class="info-card subject-activity-card">
+            <div class="icon circle green">🧬</div>
+            <span class="teacher-tag">Biología</span>
+            <h3>Prof. Samuel Ramírez</h3>
+            <ul class="subject-activity-list">
+              <li><strong>Evento:</strong> Laboratorio de ecosistemas.</li>
+              <li><strong>Actividad:</strong> Observación y análisis de muestras.</li>
+              <li><strong>Horario:</strong> Jueves · 10:00 a.m.</li>
+            </ul>
+            <button type="button" class="btn-primary full save-activity" data-event-id="biologia-laboratorio">Guardar actividad</button>
+          </article>
+
+          <article class="info-card subject-activity-card">
+            <div class="icon circle orange">📊</div>
+            <span class="teacher-tag">Estadística</span>
+            <h3>Prof. María Esteban</h3>
+            <ul class="subject-activity-list">
+              <li><strong>Evento:</strong> Análisis de datos con gráficos.</li>
+              <li><strong>Actividad:</strong> Taller de interpretación estadística.</li>
+              <li><strong>Horario:</strong> Viernes · 11:00 a.m.</li>
+            </ul>
+            <button type="button" class="btn-primary full save-activity" data-event-id="estadistica-analisis">Guardar actividad</button>
+          </article>
+
+          <article class="info-card subject-activity-card">
+            <div class="icon circle blue">⚛️</div>
+            <span class="teacher-tag">Física</span>
+            <h3>Prof. Javier Cruz</h3>
+            <ul class="subject-activity-list">
+              <li><strong>Evento:</strong> Experimento de fuerza y movimiento.</li>
+              <li><strong>Actividad:</strong> Registro de datos y conclusiones.</li>
+              <li><strong>Horario:</strong> Lunes · 12:00 p.m.</li>
+            </ul>
+            <button type="button" class="btn-primary full save-activity" data-event-id="fisica-experimento">Guardar actividad</button>
+          </article>
+
+          <article class="info-card subject-activity-card">
+            <div class="icon circle green">💻</div>
+            <span class="teacher-tag">Informática</span>
+            <h3>Prof. Laura Moreno</h3>
+            <ul class="subject-activity-list">
+              <li><strong>Evento:</strong> Taller de programación creativa.</li>
+              <li><strong>Actividad:</strong> Desarrollar un mini proyecto digital.</li>
+              <li><strong>Horario:</strong> Miércoles · 1:00 p.m.</li>
+            </ul>
+            <button type="button" class="btn-primary full save-activity" data-event-id="informatica-taller">Guardar actividad</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="reconocimiento" class="container section-space recognition-block page-section">
+        <div class="section-heading">
+          <span class="mini-tag">Sistema</span>
+          <h2>Reconocimientos por materia y salón</h2>
+        </div>
+
+        <div id="recognition-controls" class="recognition-controls" hidden></div>
+        <p id="recognition-status" class="confirmation-message" aria-live="polite"></p>
+        <div id="recognition-grid" class="recognition-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="ranking" class="container section-space page-section">
+        <div class="section-heading">
+          <span class="mini-tag">Rendimiento</span>
+          <h2>Ranking del curso</h2>
+        </div>
+
+        <div id="ranking-grid" class="ranking-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="encuestas" class="container section-space surveys page-section">
+        <div class="section-heading">
+          <span class="mini-tag">Participación</span>
+          <h2>Encuestas y sugerencias</h2>
+        </div>
+
+        <div class="survey-layout">
+          <div class="survey-card">
+            <h3>Encuesta rápida</h3>
+            <label class="check-item"><input type="checkbox" name="survey-topic" value="Eventos académicos" /> Eventos académicos</label>
+            <label class="check-item"><input type="checkbox" name="survey-topic" value="Actividades culturales" /> Actividades culturales</label>
+            <label class="check-item"><input type="checkbox" name="survey-topic" value="Servicios de bienestar" /> Servicios de bienestar</label>
+            <label class="check-item"><input type="checkbox" name="survey-topic" value="Infraestructura" /> Infraestructura</label>
+            <button id="quick-survey-submit" type="button" class="btn-primary full">Enviar encuesta</button>
+            <p id="quick-survey-status" class="confirmation-message" aria-live="polite"></p>
+          </div>
+
+          <form id="grade-survey" class="survey-card suggestion-form">
+            <h3>Prioridades del curso</h3>
+            <p>Cuéntanos qué aspecto debería priorizar el colegio este periodo.</p>
+            <label for="survey-grade">¿En qué grado estás?</label>
+            <select id="survey-grade" required>
+              <option value="" disabled selected>Selecciona tu grado</option>
+              <option value="6°">6°</option>
+              <option value="7°">7°</option>
+              <option value="8°">8°</option>
+              <option value="9°">9°</option>
+              <option value="10°">10°</option>
+              <option value="11°">11°</option>
+            </select>
+            <label for="survey-salon">¿En qué salón estás? (7 por grado)</label>
+            <select id="survey-salon" required>
+              <option value="" disabled selected>Selecciona tu salón</option>
+              <option value="1">Salón 1</option>
+              <option value="2">Salón 2</option>
+              <option value="3">Salón 3</option>
+              <option value="4">Salón 4</option>
+              <option value="5">Salón 5</option>
+              <option value="6">Salón 6</option>
+              <option value="7">Salón 7</option>
+            </select>
+            <label for="survey-priority">¿Qué tema priorizarías?</label>
+            <select id="survey-priority" required>
+              <option value="" disabled selected>Selecciona una prioridad</option>
+              <option value="Eventos académicos">Eventos académicos</option>
+              <option value="Actividades culturales">Actividades culturales</option>
+              <option value="Servicios de bienestar">Servicios de bienestar</option>
+              <option value="Infraestructura">Infraestructura</option>
+            </select>
+            <button type="submit" class="btn-primary full">Enviar respuesta</button>
+            <div class="confirmation-message" aria-live="polite"></div>
+          </form>
+
+          <form id="suggestion-form" class="suggestion-form">
+            <label for="sugerencia">Escribe tu sugerencia</label>
+            <textarea id="sugerencia" rows="6" placeholder="Comparte ideas para mejorar la experiencia estudiantil..."></textarea>
+            <button type="submit" class="btn-primary full">Enviar sugerencia</button>
+            <div class="confirmation-message" aria-live="polite"></div>
+          </form>
+
+          <article id="teacher-feedback" class="survey-card" hidden>
+            <h3>Respuestas de la comunidad</h3>
+            <p>Solo el personal docente puede consultar las sugerencias y encuestas recibidas.</p>
+            <button id="load-teacher-feedback" type="button" class="btn-primary">Cargar respuestas</button>
+            <div id="teacher-feedback-results" aria-live="polite"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>Francisco José de Caldas</p>
+        <p>Educación, innovación y comunidad</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
